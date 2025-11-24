@@ -1,22 +1,33 @@
-/* Global Reset and Variables */
+/* 
+   style.css 
+   Theme: Pastel Lifestyle (Pink/Mint/Mocha)
+*/
+
+/* --- VARIABLES --- */
+:root {
+    /* New Palette based on the image */
+    --bg-pink: #ebc4c8;        /* Hero & CTA Background */
+    --bg-mint: #e2efef;        /* Quote Section Background */
+    --bg-mocha: #6d5d5d;       /* Footer Background */
+    --text-dark: #3a3a3a;      /* Main Headings */
+    --text-muted: #666666;     /* Subtext */
+    --text-light: #ffffff;     /* Nav links, CTA text */
+    --btn-blue: #488bf4;       /* Main Action Button */
+    --border-pink: #f4bbc2;    /* Card Borders */
+}
+
+/* --- GLOBAL RESET --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-:root {
-    --dark-bg: #1F2937;
-    --blue-accent: #3882F6;
-    --light-text: #F9FAF8;
-    --secondary-text: #E5E7EB;
-    --quote-bg: #E5E7EB;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
+    color: var(--text-dark); /* Default text color is now dark */
 }
 
 ul {
@@ -26,13 +37,18 @@ ul {
 a {
     text-decoration: none;
     color: inherit;
+    transition: opacity 0.2s ease;
 }
 
-/* Header and Hero Styling */
+a:hover {
+    opacity: 0.7;
+}
+
+/* --- HEADER & HERO --- */
 .header-hero-container {
-    background-color: var(--dark-bg);
-    color: var(--light-text);
-    padding: 0 15%; /* Horizontal spacing */
+    background-color: var(--bg-pink); /* Pink Background */
+    color: var(--text-dark);
+    padding: 0 15%; 
     padding-bottom: 100px;
 }
 
@@ -47,45 +63,49 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 900;
-    color: #F9FAF8;
+    color: var(--text-dark); /* Dark logo to contrast pink */
 }
 
 nav ul {
     display: flex;
     gap: 20px;
     font-size: 18px;
-    color: #E5E7EB;
+    color: var(--text-light); /* White nav links */
+    font-weight: 400;
 }
 
-/* Hero Section */
+/* Hero Content */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
+    flex-wrap: wrap; 
 }
 
 .hero-left {
     flex: 1;
-    max-width: 500px;
+    min-width: 300px;
 }
 
 .hero-left h1 {
     font-size: 48px;
     font-weight: 900;
-    color: #F9FAF8;
+    color: var(--text-dark); /* Dark text */
     margin-bottom: 15px;
     line-height: 1.1;
 }
 
 .hero-left p {
     font-size: 18px;
-    color: #E5E7EB;
+    color: var(--text-dark); /* Darker subtext for readability */
+    opacity: 0.8;
     margin-bottom: 20px;
+    max-width: 400px;
 }
 
 .btn-main {
-    background-color: var(--blue-accent);
+    background-color: var(--btn-blue);
     color: white;
     border: none;
     padding: 10px 35px;
@@ -93,36 +113,43 @@ nav ul {
     font-weight: 700;
     font-size: 18px;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .hero-right {
     flex: 1;
     display: flex;
     justify-content: center;
+    min-width: 300px;
 }
 
 .image-placeholder {
-    background-color: gray;
+    /* Creating a "collage" look with CSS pattern/background */
+    background-color: #ddd; 
+    background-image: url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1000&auto=format&fit=crop'); /* Placeholder random image */
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: transparent; /* Hide text */
     width: 100%;
-    height: 250px;
-    text-align: center;
+    height: 300px;
+    border-radius: 4px;
+    box-shadow: 10px 10px 0px rgba(255,255,255,0.3); /* Artsy shadow effect */
 }
 
-
-/* Info Section */
+/* --- INFO SECTION --- */
 .info-section {
     padding: 60px 15%;
     text-align: center;
+    background-color: white;
 }
 
 .info-section h2 {
     font-size: 36px;
     font-weight: 900;
-    color: var(--dark-bg);
+    color: var(--text-dark);
     margin-bottom: 40px;
 }
 
@@ -141,49 +168,53 @@ nav ul {
 .box {
     width: 160px;
     height: 160px;
-    border: 4px solid var(--blue-accent);
+    border: 4px solid var(--border-pink); /* Pink Borders */
     border-radius: 15px;
     margin-bottom: 10px;
+    /* Optional: add a soft background to the squares */
+    background-color: #fff0f3; 
 }
 
 .card p {
-    color: #666; /* Standard dark gray for body text */
+    color: var(--text-muted);
     font-size: 14px;
+    line-height: 1.4;
 }
 
-/* Quote Section */
+/* --- QUOTE SECTION --- */
 .quote-section {
-    background-color: var(--quote-bg);
+    background-color: var(--bg-mint); /* Mint Green Background */
     padding: 100px 20%;
     display: flex;
     justify-content: center;
 }
 
 .quote-text {
-    font-size: 36px;
+    font-size: 30px; /* Slightly smaller for elegance */
     font-weight: 300;
     font-style: italic;
-    color: var(--dark-bg);
-    margin-bottom: 15px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 .quote-author {
     text-align: right;
     font-weight: 700;
-    font-size: 24px;
-    color: var(--dark-bg);
+    font-size: 20px;
+    color: var(--text-dark);
 }
 
-
-/* CTA Section */
+/* --- CTA SECTION --- */
 .cta-section {
     padding: 100px 15%;
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 
 .cta-box {
-    background-color: var(--blue-accent);
+    background-color: var(--bg-pink); /* Pink Box */
     color: white;
     width: 100%;
     padding: 50px 80px;
@@ -191,12 +222,20 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(235, 196, 200, 0.5);
 }
 
 .cta-text h3 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 5px;
+}
+
+.cta-text p {
+    font-size: 16px;
+    opacity: 0.9;
 }
 
 .btn-secondary {
@@ -208,13 +247,19 @@ nav ul {
     font-weight: 700;
     font-size: 18px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-/* Footer */
+.btn-secondary:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* --- FOOTER --- */
 footer {
-    background-color: var(--dark-bg);
-    color: var(--secondary-text);
-    padding: 30px;
+    background-color: var(--bg-mocha); /* Mocha/Brown Background */
+    color: rgba(255, 255, 255, 0.8);
+    padding: 35px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: auto;
 }
