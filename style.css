@@ -60,10 +60,10 @@ header {
     margin-bottom: 50px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--text-dark); /* Dark logo to contrast pink */
+.logo-img {
+    height: 70px; /* Adjust this number to make the logo bigger/smaller */
+    width: auto;
+    display: block;
 }
 
 nav ul {
